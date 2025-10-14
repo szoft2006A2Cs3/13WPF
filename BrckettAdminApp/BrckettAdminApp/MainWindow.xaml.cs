@@ -20,5 +20,30 @@ namespace BrckettAdminApp
         {
             InitializeComponent();
         }
+
+        private void Createbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Updatebtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Deletebtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LogOutbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DetailsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

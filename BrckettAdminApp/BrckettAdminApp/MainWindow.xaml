@@ -18,11 +18,18 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="70px"></RowDefinition>
             </Grid.RowDefinitions>
-            <Menu Grid.Column="0" Grid.Row="0" x:Name="MainMenu"></Menu>
-            <Button Grid.Column="2" Grid.Row="0" x:Name="LogOutStuff"></Button>
-            <ListBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" x:Name="PrimaryKeysListToSelectDatabaseRow"></ListBox>
-            <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="DetailedViewStuff"></StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="ActionsButtonStuff"></StackPanel>
+            <Menu Grid.Column="0" Grid.Row="0" x:Name="MainMenu">
+                Tables:
+                <!--items will be added dynamically-->
+            </Menu>
+            <Button Grid.Column="2" Grid.Row="0" x:Name="LogOutbtn" Click="LogOutbtn_Click">Log Out</Button>
+            <ListBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" x:Name="DetailsListBox" SelectionChanged="DetailsListBox_SelectionChanged"></ListBox>
+            <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="DetailedViewStuff">
+                <!-- Dynamic grid will be added -->
+            </StackPanel>
+            <Button x:Name="Createbtn" Grid.Column="0" Content="Create" Grid.Row="2" Click="Createbtn_Click" FontSize="30" FontFamily="Britannic Bold"></Button>
+            <Button x:Name="Updatebtn" Grid.Column="1" Content="Update" Grid.Row="2" Click="Updatebtn_Click"></Button>
+            <Button x:Name="Deletebtn" Grid.Column="1" Content="Delete" Grid.Row="1" Grid.ColumnSpan="2" Height="70" Margin="266,314,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="Deletebtn_Click"></Button>
         </Grid>
     </Grid>
 </Window>

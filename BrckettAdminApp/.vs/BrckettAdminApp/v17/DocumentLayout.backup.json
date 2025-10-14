@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\idont\\OneDrive\\Desktop\\Documents\\IKT\\13WPF\\BrckettAdminApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|c:\\users\\idont\\onedrive\\desktop\\documents\\ikt\\13wpf\\brckettadminapp\\brckettadminapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|c:\\users\\idont\\onedrive\\desktop\\documents\\ikt\\13wpf\\brckettadminapp\\brckettadminapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\idont\\OneDrive\\Desktop\\Documents\\IKT\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BrckettAdminApp\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\idont\\OneDrive\\Desktop\\Documents\\IKT\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\MainWindow.xaml",
+              "RelativeToolTip": "BrckettAdminApp\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-07T11:06:32.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\idont\\OneDrive\\Desktop\\Documents\\IKT\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "BrckettAdminApp\\MainWindow.xaml.cs",
