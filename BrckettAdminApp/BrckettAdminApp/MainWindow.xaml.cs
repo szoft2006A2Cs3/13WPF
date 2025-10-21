@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySqlX.XDevAPI.Common;
 
 namespace BrckettAdminApp
 {
@@ -18,23 +19,77 @@ namespace BrckettAdminApp
     {
         private DataBaseAccessor db;
         private GetMetaData gmd;
-        private Table CurrentTable;
+        private Table ? CurrentTable;
         public MainWindow()
         {
             InitializeComponent();
-            db = new DataBaseAccessor();
+                
+            db = new DataBaseAccessor("brckett");
             gmd = new GetMetaData(db);
-            CurrentTable = gmd.Tables.First();
-            UIGeneration.GenerateLBUI(gmd.Tables[0], db, DetailsListBox);
-            UIGeneration.GenerateDWUI(gmd.Tables[0], db, DetailedViewStuff);
+            UIGeneration.GenerateMUI(gmd,this, TablesMenu);
+            
             // Need an initialize method, and the rest in GetMetaData.cs
         }
 
         private void Createbtn_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentTable == null)
+            {
+                MessageBox.Show("Select a Table first!");
+            }
+            else 
+            {
+                UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
+                DetailsListBox.IsEnabled = false;
+                TablesMenu.IsEnabled = false;
+                Createbtn.Visibility = Visibility.Hidden;
+                Deletebtn.Visibility = Visibility.Hidden;
+                Updatebtn.Visibility = Visibility.Hidden;
+                CreateOkbtn.Visibility = Visibility.Visible;
+                CreateCancelbtn.Visibility = Visibility.Visible;
 
+                foreach (var item in DetailedViewStuff.Children)
+                {
+                    if (item.GetType() == typeof(TextBox))
+                    {
+                        TextBox textBox = (TextBox)item;
+                        textBox.IsEnabled = true;
+                    }
+                }
+            }
         }
+        private void CCancelbtn_Click(object sender, RoutedEventArgs e)
+        {
+            UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
+            DefaultView();
+        }
+        private void COKbtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> insertData = new List<string>();
+            foreach (var item in DetailedViewStuff.Children)
+            {
+                if (item.GetType() == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)item;
+                    insertData.Add(textBox.Text);
+                }
+            }
 
+            string result = "";
+            try
+            {
+                 result = db.InsertInto(CurrentTable, insertData);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            gmd.GetAllMetaData();
+            UIGeneration.GenerateLBUI(CurrentTable, db, DetailsListBox);
+            UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
+            MessageBox.Show(result);
+            DefaultView();
+        }
         private void Updatebtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -42,30 +97,70 @@ namespace BrckettAdminApp
 
         private void Deletebtn_Click(object sender, RoutedEventArgs e)
         {
-
+                ListBoxItem selectedItem = (ListBoxItem)DetailsListBox.SelectedItem;
+            if (selectedItem != null)
+            {
+                string result = db.Delete(CurrentTable, $"{selectedItem.Content}");
+                MessageBox.Show(result);
+            }
+            else 
+            {
+                MessageBox.Show("Please Select An Element You Would Like To Delete!");
+            }
+            UIGeneration.GenerateLBUI(CurrentTable, db, DetailsListBox);
+            UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
+        }
+        private void DefaultView() 
+        {
+            DetailsListBox.IsEnabled = true;
+            TablesMenu.IsEnabled = true;
+            Createbtn.Visibility = Visibility.Visible;
+            Deletebtn.Visibility = Visibility.Visible;
+            Updatebtn.Visibility = Visibility.Visible;
+            CreateCancelbtn.Visibility = Visibility.Hidden;
+            CreateOkbtn.Visibility = Visibility.Hidden;
+            foreach (var item in DetailedViewStuff.Children)
+            {
+                if (item.GetType() == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)item;
+                    textBox.IsEnabled = false;
+                }
+            }
         }
 
         private void LogOutbtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void DetailsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListBoxItem selected = (ListBoxItem)DetailsListBox.SelectedItem;
+            ListBox _tempCheck = (ListBox)sender;
+            if (_tempCheck.Items.Count != 0)
+            { 
+                ListBoxItem selected = (ListBoxItem)DetailsListBox.SelectedItem;
 
-            //                    CHANGE THIS
-            Table currentTable = CurrentTable;
+                //                    CHANGE THIS
+                Table currentTable = CurrentTable;
             
 
 
-            var CurrentTableData = db.Read(currentTable.TableName, currentTable.pkFieldName);
+                var CurrentTableData = db.Read(currentTable.TableName, currentTable.pkFieldName);
 
-            foreach (var _fieldName in currentTable.FieldNames) 
-            {
-                TextBox temp = UIHelper.FindChild<TextBox>(Application.Current.MainWindow, _fieldName);
-                temp.Text = CurrentTableData[$"{selected.Content}"][_fieldName];
+                foreach (var _fieldName in currentTable.FieldNames.Keys) 
+                {
+                    TextBox temp = UIHelper.FindChild<TextBox>(Application.Current.MainWindow, _fieldName);
+                    temp.Text = CurrentTableData[$"{selected.Content}"][_fieldName];
+                }
             }
+        }
+        public void OnMenuElementClick(MenuItem _sender, RoutedEventArgs _event) 
+        {
+            CurrentTable = gmd.Tables.Where(t => t.TableName == _sender.Header.ToString()).First();
+            //MessageBox.Show(CurrentTable.TableName);
+            UIGeneration.GenerateLBUI(CurrentTable, db, DetailsListBox);
+            UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
         }
     }
 

@@ -18,12 +18,16 @@ namespace BrckettAdminApp
         {
             _dba = dba;
             TableNames = _dba.GetTableNames();
-            foreach(var _tableName in TableNames)
+            GetAllMetaData();
+        }
+        public void GetAllMetaData() 
+        {
+            Tables.Clear();
+            foreach (var _tableName in TableNames)
             {
                 Tables.Add(new Table(_tableName, _dba));
             }
-            MessageBox.Show($"Metadata Loaded{Tables.Count()}");
+            //MessageBox.Show($"Metadata Loaded: {Tables.Count()} Tables Found!");
         }
-        
     }
 }

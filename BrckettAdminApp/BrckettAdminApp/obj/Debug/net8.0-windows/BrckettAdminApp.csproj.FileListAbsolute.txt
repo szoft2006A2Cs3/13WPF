@@ -37,3 +37,42 @@ C:\Users\idont\OneDrive\Desktop\Documents\IKT\13WPF\BrckettAdminApp\BrckettAdmin
 C:\Users\idont\OneDrive\Desktop\Documents\IKT\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\idont\OneDrive\Desktop\Documents\IKT\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.csproj.AssemblyReference.cache
 C:\Users\idont\OneDrive\Desktop\Documents\IKT\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettA.7FB1C5B3.Up2Date
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\BrckettAdminApp.exe
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\BrckettAdminApp.deps.json
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\BrckettAdminApp.runtimeconfig.json
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\BrckettAdminApp.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\BrckettAdminApp.pdb
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\Google.Protobuf.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\MySql.Data.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\System.Text.Json.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\ZstdSharp.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.csproj.AssemblyReference.cache
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\App.g.cs
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp_MarkupCompile.cache
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp_MarkupCompile.lref
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\MainWindow.baml
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.g.resources
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.AssemblyInfoInputs.cache
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.AssemblyInfo.cs
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.csproj.CoreCompileInputs.cache
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.sourcelink.json
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettA.7FB1C5B3.Up2Date
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\refint\BrckettAdminApp.dll
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.pdb
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\BrckettAdminApp.genruntimeconfig.cache
+E:\Sulis Dolgok\13WPF\BrckettAdminApp\BrckettAdminApp\obj\Debug\net8.0-windows\ref\BrckettAdminApp.dll

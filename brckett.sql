@@ -1,7 +1,9 @@
+DROP DATABASE IF EXISTS brckett;
 CREATE DATABASE brckett
 CHARSET utf8
 COLLATE utf8_hungarian_ci;
 
+USE brckett;
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/

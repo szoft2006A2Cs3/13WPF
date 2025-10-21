@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
 
@@ -28,12 +31,39 @@ namespace BrckettAdminApp
             _conn = new MySqlConnection(connectionString);
             _conn.Open();
         }
-        public string InsertInto(string tableName, List<string> data)
+        public string InsertInto(Table table, List<string> data)
         {
             string res = "";
             using (MySqlCommand cmd = _conn.CreateCommand())
             {
-                cmd.CommandText = $"INSERT INTO {tableName} VALUES({string.Join(",", data)})";
+                cmd.CommandText = $"INSERT INTO {table.TableName}({string.Join(",", table.FieldNames.Keys)}) VALUES(";
+                
+                for (int i = 0;i<data.Count();i++) 
+                {
+                    if (table.FieldNames.Values.ToList()[i] == "System.Int32")
+                    {
+                        if (int.TryParse(data[i], out _))
+                        {
+                            cmd.CommandText += $"{data[i]},";
+                        }
+                        else 
+                        {
+                            cmd.CommandText += $"0";
+                        }
+                            
+                    }
+                    else
+                    {
+                        cmd.CommandText += $"\"{data[i]}\",";
+                    }
+                }
+                cmd.CommandText = cmd.CommandText.Substring(0,cmd.CommandText.Length-1);
+                
+                
+                
+                
+                cmd.CommandText += ")";
+                //MessageBox.Show(cmd.CommandText);
                 res += $"{cmd.ExecuteNonQuery()}. Rows Affected";
 
             }
@@ -102,12 +132,21 @@ namespace BrckettAdminApp
             return result;
         }
 
-        public string Delete(string tableName, string pkFieldName, string pk)
+        public string Delete(Table table, string pk)
         {
             string res = "";
             using (MySqlCommand cmd = _conn.CreateCommand())
             {
-                cmd.CommandText = $"DELETE FROM {tableName} WHERE {pkFieldName} = {pk}";
+                cmd.CommandText = $"DELETE FROM {table.TableName} WHERE {table.pkFieldName} = ";
+                if (table.FieldNames[table.pkFieldName] == "System.Int32") 
+                {
+                    cmd.CommandText +=$"{pk}";
+                }
+                else
+                {
+                   cmd.CommandText += $"\"{pk}\"";
+                }
+                
                 res += $"{cmd.ExecuteNonQuery()}. Rows Affected";
 
             }
@@ -129,7 +168,6 @@ namespace BrckettAdminApp
                 return false;
             }
         }
-
         public string GetPrimaryKeyName(string tableName)
         {
             string res = "";
@@ -148,9 +186,9 @@ namespace BrckettAdminApp
             return res;
         }
 
-        public List<string> GetFieldNames(string tableName)
+        public Dictionary<string,string> GetFieldNames(string tableName)
         {
-            List<string> res = new List<string>();
+            Dictionary<string,string> res = new Dictionary<string,string>();
             using (MySqlCommand cmd = _conn.CreateCommand())
             {
                 cmd.CommandText = $"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '{_dbName}' AND TABLE_NAME = '{tableName}'";
@@ -158,7 +196,18 @@ namespace BrckettAdminApp
                 {
                     while (reader.Read())
                     {
-                        res.Add(reader.GetString(0));
+                        res.Add(reader.GetString(0), "");
+                    }
+                }
+                cmd.CommandText = $"SELECT * FROM {tableName} LIMIT 1";
+                using (MySqlDataReader reader = cmd.ExecuteReader()) 
+                {
+                    while (reader.Read()) 
+                    {
+                        for (int i = 0; i < reader.FieldCount; i++) 
+                        {
+                            res[reader.GetName(i)] = $"{reader.GetFieldType(i)}";
+                        }
                     }
                 }
             }

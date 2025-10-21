@@ -26,26 +26,27 @@ namespace BrckettAdminApp
         {
             // Implementation for Detailed View UI generation
             parentElement.Children.Clear();
+            parentElement.RowDefinitions.Clear();
             
             for (int i = 0; i< currentTable.FieldNames.Count(); i++)
             {
                 RowDefinition rowDef = new RowDefinition();
                 parentElement.RowDefinitions.Add(rowDef);
                 Label fieldLabel = new Label();
-                fieldLabel.Content = currentTable.FieldNames[i];
+                fieldLabel.Content = currentTable.FieldNames.Keys.ToList()[i];
                 parentElement.Children.Add(fieldLabel);
                 Grid.SetRow(fieldLabel, i);
                 Grid.SetColumn(fieldLabel, 0);
                 TextBox fieldTextBox = new TextBox();
                 fieldTextBox.IsEnabled = false;
-                fieldTextBox.Name = currentTable.FieldNames[i];
+                fieldTextBox.Name = currentTable.FieldNames.Keys.ToList()[i];
                 fieldTextBox.Text = "...";
                 parentElement.Children.Add(fieldTextBox);
                 Grid.SetRow(fieldTextBox, i);
                 Grid.SetColumn(fieldTextBox, 1);
             }
         }
-        public static void GenerateMUI(GetMetaData _gmd)
+        public static void GenerateMUI(GetMetaData _gmd, MainWindow MW, MenuItem parentElement)
         {
             // Implementation for Menu UI generation
             foreach(var _tableNames in _gmd.TableNames)
@@ -54,8 +55,9 @@ namespace BrckettAdminApp
                 menuItem.Header = _tableNames;
                 menuItem.Click += (s, e) => 
                 {
-                    
+                    MW.OnMenuElementClick((MenuItem)s,e);
                 };
+                parentElement.Items.Add(menuItem);
             }
         }
     }

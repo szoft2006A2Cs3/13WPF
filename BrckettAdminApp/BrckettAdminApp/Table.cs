@@ -10,7 +10,7 @@ namespace BrckettAdminApp
     {
         public string TableName { get; set; }
         public string pkFieldName { get; set; }
-        public List<string> FieldNames { get; set; }
+        public Dictionary<string, string> FieldNames { get; set; }
 
         public Table(string tableName, DataBaseAccessor _db)
         {
