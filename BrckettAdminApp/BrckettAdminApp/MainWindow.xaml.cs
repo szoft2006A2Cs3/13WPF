@@ -19,6 +19,9 @@ namespace BrckettAdminApp
         public MainWindow()
         {
             InitializeComponent();
+            DataBaseAccessor db = new DataBaseAccessor();
+            GetMetaData gmd = new GetMetaData(db);
+            // Need an initialize method, and the rest in GetMetaData.cs
         }
 
         private void Createbtn_Click(object sender, RoutedEventArgs e)
