@@ -11,19 +11,19 @@ namespace BrckettAdminApp
 {
     class DataBaseAccessor
     {
-        private string connectionString = "server=localhost;port=3307;uid=root;pwd=;database=testadmin";
+        private string connectionString = "server=localhost;port=3306;uid=root;pwd=;database=testadmin";
         private string _dbName = "testadmin";
         private MySqlConnection _conn;
         public DataBaseAccessor()
         {
-            connectionString = "server=localhost;port=3307;uid=root;pwd=;database=testadmin";
+            connectionString = "server=localhost;port=3306;uid=root;pwd=;database=testadmin";
             _dbName = "testadmin";
             _conn = new MySqlConnection(connectionString);
             _conn.Open();
         }
         public DataBaseAccessor(string dbName, string dbPassword = "")
         {
-            connectionString = $"server=localhost;port=3307;uid=root;pwd={dbPassword};database={dbName}";
+            connectionString = $"server=localhost;port=3306;uid=root;pwd={dbPassword};database={dbName}";
             _dbName = dbName;
             _conn = new MySqlConnection(connectionString);
             _conn.Open();
@@ -74,7 +74,7 @@ namespace BrckettAdminApp
                 {
                     while (reader.Read())
                     {
-                        result[reader.GetValue(0).ToString()] = new Dictionary<string, string>();
+                        result[$"{reader.GetValue(0)}"] = new Dictionary<string, string>();
                     }
                 }
 
@@ -82,18 +82,20 @@ namespace BrckettAdminApp
                 cmd.CommandText = $"SELECT * FROM {tableName}";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Dictionary<string, string> temp = new Dictionary<string, string>();
+                    
                     while (reader.Read())
                     {
+                        Dictionary<string, string> temp = new Dictionary<string, string>();
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
                             string fieldName = reader.GetName(i);
                             string fieldValue = reader.IsDBNull(i) ? "NULL" : reader.GetValue(i).ToString();
 
-                            temp[fieldName] = fieldValue;
+                            temp.Add(fieldName,fieldValue);
                         }
+                        result[temp[pkFieldName]] = temp;
                     }
-                    result[temp[pkFieldName]] = temp;
+                    
                 }
             }
 
@@ -152,6 +154,22 @@ namespace BrckettAdminApp
             using (MySqlCommand cmd = _conn.CreateCommand())
             {
                 cmd.CommandText = $"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '{_dbName}' AND TABLE_NAME = '{tableName}'";
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        res.Add(reader.GetString(0));
+                    }
+                }
+            }
+            return res;
+        }
+        public List<string> GetTableNames()
+        {
+            List<string> res = new List<string>();
+            using (MySqlCommand cmd = _conn.CreateCommand())
+            {
+                cmd.CommandText = $"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{_dbName}'";
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
