@@ -23,8 +23,9 @@ namespace BrckettAdminApp
         public MainWindow()
         {
             InitializeComponent();
-                
-            db = new DataBaseAccessor("brckett");
+
+            //db = new DataBaseAccessor("brckett");
+            db = new DataBaseAccessor();
             gmd = new GetMetaData(db);
             UIGeneration.GenerateMUI(gmd,this, TablesMenu);
             
@@ -87,7 +88,7 @@ namespace BrckettAdminApp
             gmd.GetAllMetaData();
             UIGeneration.GenerateLBUI(CurrentTable, db, DetailsListBox);
             UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
-            MessageBox.Show(result);
+            //MessageBox.Show(result);
             DefaultView();
         }
         private void Updatebtn_Click(object sender, RoutedEventArgs e)
