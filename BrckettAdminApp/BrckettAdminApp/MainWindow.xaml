@@ -44,9 +44,12 @@
             <Button x:Name="Createbtn" Grid.Column="0" Content="Create" Grid.Row="2" Click="Createbtn_Click" FontSize="30"></Button>
             <Button x:Name="CreateOkbtn" Grid.Column="1" Visibility="Hidden" Content="OK" Background="Green" BorderBrush="DarkGreen" BorderThickness="2" Grid.Row="2" Click="COKbtn_Click" FontSize="30"></Button>
             <Button x:Name="CreateCancelbtn" Grid.Column="2" Visibility="Hidden" Content="Cancel" Background="Red" BorderBrush="Maroon" BorderThickness="2" Grid.Row="2" Click="CCancelbtn_Click" FontSize="30"></Button>
-            
+            <Button x:Name="UpdateOkbtn" Grid.Column="1" Visibility="Hidden" Content="OK" Background="Green" BorderBrush="DarkGreen" BorderThickness="2" Grid.Row="2" Click="UOKbtn_Click" FontSize="30"></Button>
+            <Button x:Name="UpdateCancelbtn" Grid.Column="2" Visibility="Hidden" Content="Cancel" Background="Red" BorderBrush="Maroon" BorderThickness="2" Grid.Row="2" Click="UCancelbtn_Click" FontSize="30"></Button>
+
             <Button x:Name="Updatebtn" Grid.Column="1" Content="Update" Grid.Row="2" Click="Updatebtn_Click" FontSize="30"></Button>
             <Button x:Name="Deletebtn" Grid.Column="2" Content="Delete" Grid.Row="2" Height="70"  VerticalAlignment="Top" Click="Deletebtn_Click" FontSize="30"></Button>
+            
         </Grid>
     </Grid>
 </Window>

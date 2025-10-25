@@ -93,7 +93,58 @@ namespace BrckettAdminApp
         }
         private void Updatebtn_Click(object sender, RoutedEventArgs e)
         {
+            ListBoxItem selectedItem = (ListBoxItem)DetailsListBox.SelectedItem;
+            if (selectedItem != null)
+            {
+                DetailsListBox.IsEnabled = false;
+                TablesMenu.IsEnabled = false;
+                Createbtn.Visibility = Visibility.Hidden;
+                Deletebtn.Visibility = Visibility.Hidden;
+                Updatebtn.Visibility = Visibility.Hidden;
+                UpdateOkbtn.Visibility = Visibility.Visible;
+                UpdateCancelbtn.Visibility = Visibility.Visible;
 
+                foreach (var item in DetailedViewStuff.Children)
+                {
+                    if (item.GetType() == typeof(TextBox))
+                    {
+                        TextBox textBox = (TextBox)item;
+                        textBox.IsEnabled = true;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select An Element Before Updating");
+            }
+            
+        }
+        private void UCancelbtn_Click(object sender, RoutedEventArgs e)
+        {
+            UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
+            DefaultView();
+        }
+        private void UOKbtn_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem selectedItem = (ListBoxItem)DetailsListBox.SelectedItem;
+            Dictionary<string,string> tempInput = new Dictionary<string,string>();
+            int i = 0;
+            foreach (var item in DetailedViewStuff.Children)
+            {
+                if (item.GetType() == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)item;
+                    tempInput.Add(CurrentTable.FieldNames.Keys.ToList()[i], textBox.Text);
+                    i++;
+                }
+                
+            }
+
+            db.Update(CurrentTable,$"{selectedItem.Content}",tempInput);
+            gmd.GetAllMetaData();
+            UIGeneration.GenerateLBUI(CurrentTable, db, DetailsListBox);
+            UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
+            DefaultView();
         }
 
         private void Deletebtn_Click(object sender, RoutedEventArgs e)
@@ -120,6 +171,8 @@ namespace BrckettAdminApp
             Updatebtn.Visibility = Visibility.Visible;
             CreateCancelbtn.Visibility = Visibility.Hidden;
             CreateOkbtn.Visibility = Visibility.Hidden;
+            UpdateOkbtn.Visibility = Visibility.Hidden;
+            UpdateCancelbtn.Visibility = Visibility.Hidden;
             foreach (var item in DetailedViewStuff.Children)
             {
                 if (item.GetType() == typeof(TextBox))
@@ -162,69 +215,6 @@ namespace BrckettAdminApp
             //MessageBox.Show(CurrentTable.TableName);
             UIGeneration.GenerateLBUI(CurrentTable, db, DetailsListBox);
             UIGeneration.GenerateDWUI(CurrentTable, db, DetailedViewStuff);
-        }
-    }
-
-
-
-
-
-
-
-
-    //HELP FROM THE INTERNET
-    //https://stackoverflow.com/questions/636383/how-can-i-find-wpf-controls-by-name-or-type
-    public class UIHelper 
-    {
-        /// <summary>
-        /// Finds a Child of a given item in the visual tree. 
-        /// </summary>
-        /// <param name="parent">A direct parent of the queried item.</param>
-        /// <typeparam name="T">The type of the queried item.</typeparam>
-        /// <param name="childName">x:Name or Name of child. </param>
-        /// <returns>The first parent item that matches the submitted type parameter or null if not found</returns> 
-        public static T FindChild<T>(DependencyObject parent, string childName)
-           where T : DependencyObject
-        {
-            // Confirm parent and childName are valid. 
-            if (parent == null) return null;
-
-            T foundChild = null;
-
-            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
-            for (int i = 0; i < childrenCount; i++)
-            {
-                var child = VisualTreeHelper.GetChild(parent, i);
-                // If the child is not of the request child type child
-                T childType = child as T;
-                if (childType == null)
-                {
-                    // recursively drill down the tree
-                    foundChild = FindChild<T>(child, childName);
-
-                    // If the child is found, break so we do not overwrite the found child. 
-                    if (foundChild != null) break;
-                }
-                else if (!string.IsNullOrEmpty(childName))
-                {
-                    var frameworkElement = child as FrameworkElement;
-                    // If the child's name is set for search
-                    if (frameworkElement != null && frameworkElement.Name == childName)
-                    {
-                        // if the child's name is of the request name
-                        foundChild = (T)child;
-                        break;
-                    }
-                }
-                else
-                {
-                    // child element found.
-                    foundChild = (T)child;
-                    break;
-                }
-            }
-
-            return foundChild;
         }
     }
 }

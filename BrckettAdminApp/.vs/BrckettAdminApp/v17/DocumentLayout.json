@@ -11,20 +11,24 @@
       "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\getmetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\getmetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\uihelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\uihelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\uigeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\uigeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\databaseaccessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\databaseaccessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|e:\\sulis dolgok\\13wpf\\brckettadminapp\\brckettadminapp\\getmetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE7203E8-DB3F-4866-AEF6-77972EEF9E50}|BrckettAdminApp\\BrckettAdminApp.csproj|solutionrelative:brckettadminapp\\getmetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UIHelper.cs",
+              "DocumentMoniker": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\UIHelper.cs",
+              "RelativeDocumentMoniker": "BrckettAdminApp\\UIHelper.cs",
+              "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\UIHelper.cs",
+              "RelativeToolTip": "BrckettAdminApp\\UIHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T12:19:03.767Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,7 +77,7 @@
               "RelativeDocumentMoniker": "BrckettAdminApp\\MainWindow.xaml.cs",
               "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\MainWindow.xaml.cs",
               "RelativeToolTip": "BrckettAdminApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAvwDoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJUAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T11:10:19.922Z",
               "EditorCaption": ""
@@ -80,39 +97,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Table.cs",
               "DocumentMoniker": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\Table.cs",
               "RelativeDocumentMoniker": "BrckettAdminApp\\Table.cs",
               "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\Table.cs",
               "RelativeToolTip": "BrckettAdminApp\\Table.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T08:14:59.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DataBaseAccessor.cs",
               "DocumentMoniker": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\DataBaseAccessor.cs",
               "RelativeDocumentMoniker": "BrckettAdminApp\\DataBaseAccessor.cs",
               "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\DataBaseAccessor.cs",
               "RelativeToolTip": "BrckettAdminApp\\DataBaseAccessor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAJQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T07:22:34.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "GetMetaData.cs",
               "DocumentMoniker": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\GetMetaData.cs",
               "RelativeDocumentMoniker": "BrckettAdminApp\\GetMetaData.cs",
               "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\GetMetaData.cs",
               "RelativeToolTip": "BrckettAdminApp\\GetMetaData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T07:22:11.572Z",
               "EditorCaption": ""

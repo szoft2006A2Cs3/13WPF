@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
@@ -73,26 +74,41 @@ namespace BrckettAdminApp
             }
             return res;
         }
-        public string Update(string tableName, string pkField, string pk, Dictionary<string, string> fieldValuePairs)
+        public string Update(Table currentTable, string pk, Dictionary<string, string> fieldValuePairs)
         {
             string res = "";
+            
             using (MySqlCommand cmd = _conn.CreateCommand())
             {
-                cmd.CommandText = $"UPDATE {tableName} SET {fieldValuePairs.Keys.First()}={fieldValuePairs[fieldValuePairs.Keys.First()]}";
-                foreach (var field in fieldValuePairs.Keys.Skip(1))
+                cmd.CommandText = $"UPDATE {currentTable.TableName} SET ";
+
+                foreach (var field in fieldValuePairs.Keys)
                 {
-                    cmd.CommandText += $",{field}={fieldValuePairs[field]}";
+                    if (currentTable.FieldNames[field] == "System.Int32") 
+                    {
+                        if (int.TryParse(fieldValuePairs[field], out _))
+                        {
+                            cmd.CommandText += $"{field}={fieldValuePairs[field]},";
+                        }
+                    }
+                    else
+                    {
+                        cmd.CommandText += $"{field}='{fieldValuePairs[field]}',";                   
+                    }
                 }
-                cmd.CommandText += $" WHERE {pkField}={pk}";
+                cmd.CommandText = cmd.CommandText.TrimEnd(',');
+                cmd.CommandText += $" WHERE {currentTable.pkFieldName}={pk}";
 
+                //MessageBox.Show(cmd.CommandText);
                 res += $"{cmd.ExecuteNonQuery()}. Rows Affected";
-
             }
             if (res == "")
             {
                 res = "No Changes";
             }
+            
             return res;
+
         }
         public Dictionary<string, Dictionary<string, string>> Read(string tableName, string pkFieldName)
         {
@@ -131,7 +147,6 @@ namespace BrckettAdminApp
 
             return result;
         }
-
         public string Delete(Table table, string pk)
         {
             string res = "";
