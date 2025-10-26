@@ -20,12 +20,17 @@ namespace BrckettAdminApp
         private DataBaseAccessor db;
         private GetMetaData gmd;
         private Table ? CurrentTable;
+
+
+        //
+        // A "brckett without constraints" adatbázisra lett tervezve a program
+        //
         public MainWindow()
         {
             InitializeComponent();
 
-            //db = new DataBaseAccessor("brckett");
-            db = new DataBaseAccessor();
+            db = new DataBaseAccessor("brckett");
+            //db = new DataBaseAccessor();
             gmd = new GetMetaData(db);
             UIGeneration.GenerateMUI(gmd,this, TablesMenu);
             

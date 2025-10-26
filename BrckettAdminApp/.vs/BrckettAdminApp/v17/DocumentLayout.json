@@ -54,8 +54,7 @@
               "RelativeToolTip": "BrckettAdminApp\\UIHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T12:19:03.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T12:19:03.767Z"
             },
             {
               "$type": "Document",
@@ -66,8 +65,7 @@
               "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\MainWindow.xaml",
               "RelativeToolTip": "BrckettAdminApp\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-21T11:10:22.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T11:10:22.834Z"
             },
             {
               "$type": "Document",
@@ -77,7 +75,7 @@
               "RelativeDocumentMoniker": "BrckettAdminApp\\MainWindow.xaml.cs",
               "ToolTip": "E:\\Sulis Dolgok\\13WPF\\BrckettAdminApp\\BrckettAdminApp\\MainWindow.xaml.cs",
               "RelativeToolTip": "BrckettAdminApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJUAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T11:10:19.922Z",
               "EditorCaption": ""
@@ -92,8 +90,7 @@
               "RelativeToolTip": "BrckettAdminApp\\UIGeneration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T08:19:08.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T08:19:08.608Z"
             },
             {
               "$type": "Document",
@@ -105,8 +102,7 @@
               "RelativeToolTip": "BrckettAdminApp\\Table.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T08:14:59.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T08:14:59.478Z"
             },
             {
               "$type": "Document",
@@ -118,8 +114,7 @@
               "RelativeToolTip": "BrckettAdminApp\\DataBaseAccessor.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAAJQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:22:34.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T07:22:34.704Z"
             },
             {
               "$type": "Document",
@@ -131,8 +126,7 @@
               "RelativeToolTip": "BrckettAdminApp\\GetMetaData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:22:11.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T07:22:11.572Z"
             }
           ]
         }
