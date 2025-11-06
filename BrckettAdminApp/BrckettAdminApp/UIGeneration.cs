@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace BrckettAdminApp
 {
@@ -48,11 +50,17 @@ namespace BrckettAdminApp
         }
         public static void GenerateMUI(GetMetaData _gmd, MainWindow MW, MenuItem parentElement)
         {
+
+            BrushConverter bc = new BrushConverter();
+            Brush brush = (Brush)bc.ConvertFrom("#FF7F0086");
+            brush.Freeze();
             // Implementation for Menu UI generation
-            foreach(var _tableNames in _gmd.TableNames)
+            foreach (var _tableNames in _gmd.TableNames)
             {
                 MenuItem menuItem = new MenuItem();
                 menuItem.Header = _tableNames;
+                menuItem.Background = brush;
+                menuItem.FontWeight = FontWeights.Bold;
                 menuItem.Click += (s, e) => 
                 {
                     MW.OnMenuElementClick((MenuItem)s,e);

@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         MinHeight="450"
         MinWidth="800"
-        MaxHeight="450"
+        MaxHeight="460"
         MaxWidth="800"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="460" Width="800">
 
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF191919">
         <Grid x:Name="MainArea" Height="429">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -23,15 +23,17 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="70px"></RowDefinition>
             </Grid.RowDefinitions>
-            <Menu >
-                <MenuItem Header="TABLES" x:Name="TablesMenu" FontSize="22">
+            <Menu Background="#FF92009A" Foreground="#FF85E600" >
+                <MenuItem Header="TABLES" x:Name="TablesMenu" FontSize="22" FontWeight="Bold">
                     <!--items will be added dynamically-->
                     
                 </MenuItem>
             </Menu>
 
-            <Button FontSize="22" Grid.Column="2" Grid.Row="0" x:Name="LogOutbtn" Click="LogOutbtn_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">Log Out</Button>
-            <ListBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" x:Name="DetailsListBox" SelectionChanged="DetailsListBox_SelectionChanged"></ListBox>
+            <Button FontSize="22" Grid.Column="2" Grid.Row="0" x:Name="LogOutbtn" Click="LogOutbtn_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF92009A" Foreground="#FF85E600" FontWeight="Bold">Log Out</Button>
+            <ListBox  Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" x:Name="DetailsListBox" SelectionChanged="DetailsListBox_SelectionChanged" Background="#FFD800E4">
+                
+            </ListBox>
             <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="DetailedViewStuff">
                 <Grid.RowDefinitions>
                 </Grid.RowDefinitions>
@@ -41,14 +43,14 @@
                 </Grid.ColumnDefinitions>
                 <!-- Dynamic grid will be added -->
             </Grid>
-            <Button x:Name="Createbtn" Grid.Column="0" Content="Create" Grid.Row="2" Click="Createbtn_Click" FontSize="30"></Button>
+            <Button x:Name="Createbtn" Grid.Column="0" Content="Create" Grid.Row="2" Click="Createbtn_Click" FontSize="30" Background="#FF7F0086" BorderBrush="#FF46004A" FontWeight="Bold" Foreground="#FF85E600"></Button>
             <Button x:Name="CreateOkbtn" Grid.Column="1" Visibility="Hidden" Content="OK" Background="Green" BorderBrush="DarkGreen" BorderThickness="2" Grid.Row="2" Click="COKbtn_Click" FontSize="30"></Button>
             <Button x:Name="CreateCancelbtn" Grid.Column="2" Visibility="Hidden" Content="Cancel" Background="Red" BorderBrush="Maroon" BorderThickness="2" Grid.Row="2" Click="CCancelbtn_Click" FontSize="30"></Button>
             <Button x:Name="UpdateOkbtn" Grid.Column="1" Visibility="Hidden" Content="OK" Background="Green" BorderBrush="DarkGreen" BorderThickness="2" Grid.Row="2" Click="UOKbtn_Click" FontSize="30"></Button>
             <Button x:Name="UpdateCancelbtn" Grid.Column="2" Visibility="Hidden" Content="Cancel" Background="Red" BorderBrush="Maroon" BorderThickness="2" Grid.Row="2" Click="UCancelbtn_Click" FontSize="30"></Button>
 
-            <Button x:Name="Updatebtn" Grid.Column="1" Content="Update" Grid.Row="2" Click="Updatebtn_Click" FontSize="30"></Button>
-            <Button x:Name="Deletebtn" Grid.Column="2" Content="Delete" Grid.Row="2" Height="70"  VerticalAlignment="Top" Click="Deletebtn_Click" FontSize="30"></Button>
+            <Button x:Name="Updatebtn" Grid.Column="1" Content="Update" Grid.Row="2" Click="Updatebtn_Click" FontSize="30" BorderBrush="#FF46004A" Background="#FF7F0086" FontWeight="Bold" Foreground="#FF85E600"></Button>
+            <Button x:Name="Deletebtn" Grid.Column="2" Content="Delete" Grid.Row="2" Height="70"  VerticalAlignment="Top" Click="Deletebtn_Click" FontSize="30" BorderBrush="#FF46004A" Background="#FF7F0086" FontWeight="Bold" Foreground="#FF85E600"></Button>
             
         </Grid>
     </Grid>
