@@ -15,18 +15,29 @@ namespace BrckettAdminApp
         {
             // Implementation for ListBox UI generation
             parentElement.Items.Clear();
-
+            BrushConverter bc = new BrushConverter();
+            Brush pbrush = (Brush)bc.ConvertFrom("#FFD800E4");
+            pbrush.Freeze();
+            Brush gbrush = (Brush)bc.ConvertFrom("#FF85E600");
+            gbrush.Freeze();
             var currentTableData = _dba.Read(currentTable.TableName, currentTable.pkFieldName);
             foreach (var key in currentTableData.Keys) 
             {
                 ListBoxItem lbi = new ListBoxItem();
                 lbi.Content = key;
+                lbi.Background = pbrush;
+                lbi.Foreground = gbrush;
                 parentElement.Items.Add(lbi);
             }
         }
         public static void GenerateDWUI(Table currentTable, DataBaseAccessor _dba, Grid parentElement)
         {
             // Implementation for Detailed View UI generation
+            BrushConverter bc = new BrushConverter();
+            Brush pbrush = (Brush)bc.ConvertFrom("#FFD800E4");
+            pbrush.Freeze();
+            Brush gbrush = (Brush)bc.ConvertFrom("#FF85E600");
+            gbrush.Freeze();
             parentElement.Children.Clear();
             parentElement.RowDefinitions.Clear();
             
@@ -36,6 +47,7 @@ namespace BrckettAdminApp
                 parentElement.RowDefinitions.Add(rowDef);
                 Label fieldLabel = new Label();
                 fieldLabel.Content = currentTable.FieldNames.Keys.ToList()[i];
+                fieldLabel.Foreground = gbrush;
                 parentElement.Children.Add(fieldLabel);
                 Grid.SetRow(fieldLabel, i);
                 Grid.SetColumn(fieldLabel, 0);
@@ -43,6 +55,8 @@ namespace BrckettAdminApp
                 fieldTextBox.IsEnabled = false;
                 fieldTextBox.Name = currentTable.FieldNames.Keys.ToList()[i];
                 fieldTextBox.Text = "...";
+                fieldTextBox.Background = pbrush;
+                fieldTextBox.Foreground = gbrush;
                 parentElement.Children.Add(fieldTextBox);
                 Grid.SetRow(fieldTextBox, i);
                 Grid.SetColumn(fieldTextBox, 1);
